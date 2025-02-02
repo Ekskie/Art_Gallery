@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Art Gallery</title>
+    <style>
+        body {
+            background-color: #0d1117;
+            color: #c9d1d9;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            font-size: 3rem;
+            text-shadow: 0px 0px 10px #58a6ff;
+        }
+
+        a {
+            color: #58a6ff;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        .art-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .art-card {
+            background: #161b22;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px #58a6ff;
+        }
+
+        img {
+            width: 300px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Art Gallery</h1>
+    <a href="{{ url_for('upload') }}">Upload Artwork</a>
+    <div class="art-container">
+        {% for artwork in artworks %}
+        <div class="art-card">
+            <h2>{{ artwork.title }}</h2>
+            <p>By {{ artwork.artist }}</p>
+            <img src="{{ url_for('static', filename='uploads/' ~ artwork.filename) }}" alt="{{ artwork.title }}">
+        </div>
+        {% endfor %}
+
+    </div>
+</body>
+
+</html>

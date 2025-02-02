@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Artwork</title>
+    <style>
+        body {
+            background-color: #0d1117;
+            color: #c9d1d9;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            font-size: 3rem;
+            text-shadow: 0px 0px 10px #58a6ff;
+        }
+        form {
+            margin-top: 20px;
+            background: #161b22;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px #58a6ff;
+            display: inline-block;
+        }
+        input, button {
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            font-size: 1rem;
+        }
+        button {
+            background-color: #58a6ff;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Upload Artwork</h1>
+    <form action="" method="post" enctype="multipart/form-data">
+        <label>Title:</label>
+        <input type="text" name="title" required>
+        <label>Artist:</label>
+        <input type="text" name="artist" required>
+        <input type="file" name="file" required>
+        <button type="submit">Upload</button>
+    </form>
+    <br>
+    <a href="{{ url_for('index') }}">Back to Gallery</a>
+</body>
+</html>
