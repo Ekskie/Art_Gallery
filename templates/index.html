@@ -52,7 +52,7 @@
         <div class="art-card">
             <h2>{{ artwork.title }}</h2>
             <p>By {{ artwork.artist }}</p>
-            <img src="{{ url_for('static', filename='uploads/' ~ artwork.filename) }}" alt="{{ artwork.title }}">
+            <img src="https://kurxmuewzwtecbpixamh.supabase.co/storage/v1/object/public/artworks/{{ artwork.filename }}" alt="{{ artwork.title }}">
         </div>
         {% endfor %}
 
