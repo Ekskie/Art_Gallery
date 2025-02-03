@@ -2,18 +2,14 @@ import os
 from flask import Flask, render_template, request, redirect, url_for
 from werkzeug.utils import secure_filename
 from supabase import create_client
-from dotenv import load_dotenv
 import sys
-
-# Load environment variables from .env file
-load_dotenv()
 
 # Initialize Flask app
 app = Flask(__name__)
 
-# Supabase Configuration
-SUPABASE_URL = os.getenv("SUPABASE_URL")
-SUPABASE_KEY = os.getenv("SUPABASE_KEY")
+# Supabase Configuration (directly in the app.py)
+SUPABASE_URL = "https://kurxmuewzwtecbpixamh.supabase.co"  # Replace with your actual Supabase URL
+SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt1cnhtdWV3end0ZWNicGl4YW1oIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzg0Nzk2NTksImV4cCI6MjA1NDA1NTY1OX0.ZfvBRIHTqWiMdDH5pXfe7HYQWxImPFqoXfGqPDqWVqU"  # Replace with your actual Supabase Key
 
 supa = create_client(SUPABASE_URL, SUPABASE_KEY)
 
